@@ -1,0 +1,54 @@
+The project includes 2 files:
+1. features.py
+2. classifier.py
+
+training dataset - http://flavia.sourceforge.net/
+
+
+-----features.py extracts the features related to shape, color, and texture
+
+function prototype
+
+def summation(image)
+def lacunarity(image,p)
+def skewness(image,avg,stddev)
+def kurtosis(image,avg,stddev)
+def create_dataset()
+
+lacunarity(),skewness(),kurtosis(),summation() are helper function for the named features
+create_dataset() is to extract all the features.
+The created dataset is put in the csv file.
+
+-----classifier.py classify the leaves into one of the 32 species
+
+functions prototye
+
+def preprocess()
+def PNN(X_train, X_test, y_train, y_test,X_dummy)
+def SVM(X_train, X_test, y_train, y_test,X_dummy)
+def ANN(X_train, X_test, y_train, y_test,X_dummy)
+def dummy_data()
+
+names of the prototye are self-explanatory
+
+-------environment used:
+  OS Used: Windows 10 (64 bit)
+  Language: python 3.5
+  Environment: conda 4.5.11
+  libraries:
+    OS  
+    string
+    numpy
+    pandas
+    scikit-learn
+    neupy
+    cv2
+    mahotas
+
+-----To classify run command on cmd:
+    1. python features.py to create the dataset.
+    2. python classifier.py
+    3. Input the name of the classifier you want to train,
+    enter either ANN or SVM or PNN (input is case sensitive)
+    4. results of the classification on flavia and dummy dataset 
+       will be shown
